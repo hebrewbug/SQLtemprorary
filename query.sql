@@ -55,3 +55,23 @@ INNER JOIN (SELECT id, country_id
            WHERE (away_goal + home_goal) >= 10) AS sub
 ON c.id = sub.country_id
 GROUP BY country_name;
+
+
+SELECT
+	-- Select country, date, home, and away goals from the subquery
+    subq.country,
+    date,
+    home_goal,
+    away_goal
+FROM 
+	-- Select country name, date, home_goal, away_goal, and total goals in the subquery
+	(SELECT name AS country, 
+     	    m.date, 
+     		m.home_goal, 
+     		m.away_goal,
+           (m.home_goal + m.away_goal) AS total_goals
+    FROM match AS m
+    LEFT JOIN country AS c
+    ON m.country_id = c.id) AS subq
+-- Filter by total goals scored in the main query
+WHERE total_goals >= 10;
