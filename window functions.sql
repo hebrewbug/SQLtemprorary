@@ -1,5 +1,4 @@
-
-  -- Assign numbers to each row
+-- Assign numbers to each row
 SELECT
   *,
   ROW_NUMBER() OVER () AS Row_N
