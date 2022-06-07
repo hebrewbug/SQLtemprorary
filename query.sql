@@ -42,6 +42,7 @@ ORDER BY city_perc DESC
 LIMIT 11;
 
 
+
 SELECT
 	-- Select country name and the count match IDs
     name AS country_name,
@@ -55,6 +56,7 @@ INNER JOIN (SELECT id, country_id
            WHERE (away_goal + home_goal) >= 10) AS sub
 ON c.id = sub.country_id
 GROUP BY country_name;
+
 
 
 SELECT
@@ -75,6 +77,8 @@ FROM
     ON m.country_id = c.id) AS subq
 -- Filter by total goals scored in the main query
 WHERE total_goals >= 10;
+
+
 
 --Nested simple subqueries
 
