@@ -1,5 +1,7 @@
 --INFORMATION_SCHEMA
 
+
+
 -- Select all columns from the TABLES system database
  SELECT * 
  FROM INFORMATION_SCHEMA.TABLES
