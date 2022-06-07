@@ -24,6 +24,7 @@ WHERE table_name = 'customer';
 
 
 
+
 --TIME
 
 
